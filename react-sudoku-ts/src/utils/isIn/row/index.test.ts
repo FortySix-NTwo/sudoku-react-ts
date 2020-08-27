@@ -1,4 +1,4 @@
-import isInRow from '.';
+import isInRow from './';
 import { GRID } from 'typings';
 
 describe('is in row function', () => {

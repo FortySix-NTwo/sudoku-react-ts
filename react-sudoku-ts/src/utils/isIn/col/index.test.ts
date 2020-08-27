@@ -1,4 +1,4 @@
-import isInCol from '.';
+import isInCol from './';
 import { GRID } from 'typings';
 
 describe('is in column function', () => {
