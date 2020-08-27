@@ -14,6 +14,11 @@ function reducer(state = initialState, action: AnyAction) {
         ...state,
         grid: fillSudokuGrid(),
       };
+    case types.SELECT_BLOCK_AT:
+      return {
+        ...state,
+        selectBlock: action.coords,
+      };
     default:
       return state;
   }
