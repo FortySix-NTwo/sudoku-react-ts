@@ -1,17 +1,12 @@
 import { GRID, NUMBERS } from 'typings'
-import { isInCol, isInRow, shuffle, identifySquare, isInSquare } from 'utils'
-
-const gird: GRID = [
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-]
+import {
+  isInCol,
+  isInRow,
+  shuffle,
+  identifySquare,
+  isInSquare,
+  verifyGrid,
+} from 'utils'
 
 const numbers: NUMBERS[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -30,24 +25,19 @@ function populateGrid(grid: GRID) {
 
     if (grid[row][col] === 0) {
       shuffle(numbers)
-
       for (let value of numbers) {
         if (!isInRow({ grid, row, value }))
           if (!isInCol({ col, grid, value })) {
             const square = identifySquare({ col, grid, row })
             if (!isInSquare({ square, value })) grid[row][col] = value
             grid[row][col] = value
-            if (true) {
-              return true
-            } else {
-            }
+            if (verifyGrid(grid)) return true
+            else if (populateGrid(grid)) return true
           }
       }
-
       break
     }
   }
-
   grid[row][col] = 0
 }
 
