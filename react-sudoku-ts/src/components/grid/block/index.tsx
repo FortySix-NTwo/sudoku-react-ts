@@ -3,8 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Dispatch, AnyAction } from 'redux';
 
 import { IReducer, selectBlock } from 'reducers';
-import { Container } from './styles';
 import { N, INDEX } from 'typings';
+
+import { Container } from './styles';
 
 interface IProps {
   colIndex: INDEX;
@@ -13,30 +14,33 @@ interface IProps {
 
 interface IState {
   isActive: boolean;
+  isPuzzle: boolean;
   value: N;
 }
 
-const Block: FC<IProps> = ({ rowIndex, colIndex }) => {
+const Block: FC<IProps> = ({ colIndex, rowIndex }) => {
   const state = useSelector<IReducer, IState>(
-    ({ gameGrid, selectedBlock }) => ({
+    ({ puzzleGrid, selectedBlock, gameGrid }) => ({
       isActive: selectedBlock
         ? selectedBlock[0] === rowIndex && selectedBlock[1] === colIndex
         : false,
+      isPuzzle:
+        puzzleGrid && puzzleGrid[rowIndex][colIndex] !== 0 ? true : false,
       value: gameGrid ? gameGrid[rowIndex][colIndex] : 0,
     })
   );
-
   const dispatch = useDispatch<Dispatch<AnyAction>>();
 
-  function handleSelected() {
+  function handleClick() {
     if (!state.isActive) dispatch(selectBlock([rowIndex, colIndex]));
   }
 
   return (
     <Container
       active={state.isActive}
-      className={`block-${rowIndex}-${colIndex}`}
-      onClick={handleSelected}
+      data-cy={`block-${rowIndex}-${colIndex}`}
+      onClick={handleClick}
+      puzzle={state.isPuzzle}
     >
       {state.value === 0 ? '' : state.value}
     </Container>
