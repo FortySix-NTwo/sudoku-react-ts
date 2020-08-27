@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Content = styled.div`
   max-width: 500px;
@@ -6,4 +6,4 @@ export const Content = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: center;
-`
+`;

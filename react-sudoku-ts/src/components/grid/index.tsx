@@ -1,16 +1,24 @@
-import React, { FC, Children } from 'react'
+import React, { FC, Children, useEffect, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+import { Dispatch, AnyAction } from 'redux';
 
-import { default as Block } from './block'
-import { Container, Row } from './styles'
+import Block from './block';
+import { Container, Row } from './styles';
+import { createGrid } from 'reducers';
 
 const Grid: FC = () => {
-  //TODO:
+  const dispatch = useDispatch<Dispatch<AnyAction>>();
+  const create = useCallback(() => dispatch(createGrid()), [dispatch]);
+
+  useEffect(() => {
+    create();
+  }, [create]);
 
   return (
-    <Container className="grid-container">
+    <Container className="sudoku-container">
       {Children.toArray(
         [...Array(9)].map((_, rowIndex) => (
-          <Row className="grid-row-container">
+          <Row className="sudoku-row-container">
             {Children.toArray(
               [...Array(9)].map((_, colIndex) => (
                 <Block colIndex={colIndex} rowIndex={rowIndex} />
@@ -20,7 +28,7 @@ const Grid: FC = () => {
         ))
       )}
     </Container>
-  )
-}
+  );
+};
 
-export default Grid
+export default Grid;

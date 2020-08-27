@@ -1,5 +1,5 @@
-import isInCol from '.'
-import { GRID } from 'typings'
+import isInCol from '.';
+import { GRID } from 'typings';
 
 describe('is in column function', () => {
   it('returns true when value is within the grids column', () => {
@@ -13,12 +13,12 @@ describe('is in column function', () => {
       [4, 7, 6, 5, 1, 8, 2, 3, 9],
       [2, 8, 5, 9, 6, 3, 7, 1, 4],
       [3, 1, 9, 2, 4, 7, 8, 5, 6],
-    ]
+    ];
 
-    expect(isInCol({ grid: grid, col: 0, value: 9 })).toBeTruthy()
-    expect(isInCol({ grid: grid, col: 5, value: 9 })).toBeTruthy()
-    expect(isInCol({ grid: grid, col: 8, value: 9 })).toBeTruthy()
-  })
+    expect(isInCol({ grid: grid, col: 0, value: 9 })).toBeTruthy();
+    expect(isInCol({ grid: grid, col: 5, value: 9 })).toBeTruthy();
+    expect(isInCol({ grid: grid, col: 8, value: 9 })).toBeTruthy();
+  });
   it('returns false when value is not within grids column', () => {
     const grid: GRID = [
       [8, 4, 2, 6, 5, 1, 3, 9, 2],
@@ -30,10 +30,10 @@ describe('is in column function', () => {
       [4, 7, 6, 5, 1, 8, 2, 3, 0],
       [2, 8, 5, 9, 6, 3, 7, 1, 4],
       [3, 1, 9, 2, 4, 7, 8, 5, 6],
-    ]
+    ];
 
-    expect(isInCol({ grid: grid, col: 0, value: 9 })).toBeFalsy()
-    expect(isInCol({ grid: grid, col: 5, value: 9 })).toBeFalsy()
-    expect(isInCol({ grid: grid, col: 8, value: 9 })).toBeFalsy()
-  })
-})
+    expect(isInCol({ grid: grid, col: 0, value: 9 })).toBeFalsy();
+    expect(isInCol({ grid: grid, col: 5, value: 9 })).toBeFalsy();
+    expect(isInCol({ grid: grid, col: 8, value: 9 })).toBeFalsy();
+  });
+});

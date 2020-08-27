@@ -1,3 +1,3 @@
-export { Content, Title, Card } from './styles'
+export { default as Grid } from './grid';
 
-export { default as Grid } from './grid'
+export { Content, Card, Title } from './styles';

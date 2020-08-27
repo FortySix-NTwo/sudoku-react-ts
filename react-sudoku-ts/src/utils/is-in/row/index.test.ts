@@ -1,5 +1,5 @@
-import isInRow from '.'
-import { GRID } from 'typings'
+import isInRow from '.';
+import { GRID } from 'typings';
 
 describe('is in row function', () => {
   it('returns true when value is within the grids row', () => {
@@ -13,11 +13,11 @@ describe('is in row function', () => {
       [4, 7, 6, 5, 1, 8, 2, 3, 9],
       [2, 8, 5, 9, 6, 3, 7, 1, 4],
       [3, 1, 9, 2, 4, 7, 8, 5, 6],
-    ]
-    expect(isInRow({ grid: grid, row: 0, value: 9 })).toBeTruthy()
-    expect(isInRow({ grid: grid, row: 5, value: 9 })).toBeTruthy()
-    expect(isInRow({ grid: grid, row: 8, value: 9 })).toBeTruthy()
-  })
+    ];
+    expect(isInRow({ grid: grid, row: 0, value: 9 })).toBeTruthy();
+    expect(isInRow({ grid: grid, row: 5, value: 9 })).toBeTruthy();
+    expect(isInRow({ grid: grid, row: 8, value: 9 })).toBeTruthy();
+  });
 
   it('returns false when value is not within grids row', () => {
     const grid: GRID = [
@@ -30,9 +30,9 @@ describe('is in row function', () => {
       [4, 7, 6, 5, 1, 8, 2, 3, 9],
       [2, 8, 5, 9, 6, 3, 7, 1, 4],
       [3, 1, 0, 2, 4, 7, 8, 5, 6],
-    ]
-    expect(isInRow({ grid: grid, row: 0, value: 9 })).toBeFalsy()
-    expect(isInRow({ grid: grid, row: 5, value: 9 })).toBeFalsy()
-    expect(isInRow({ grid: grid, row: 8, value: 9 })).toBeFalsy()
-  })
-})
+    ];
+    expect(isInRow({ grid: grid, row: 0, value: 9 })).toBeFalsy();
+    expect(isInRow({ grid: grid, row: 5, value: 9 })).toBeFalsy();
+    expect(isInRow({ grid: grid, row: 8, value: 9 })).toBeFalsy();
+  });
+});

@@ -1,5 +1,5 @@
-import { createGlobalStyle, css } from 'styled-components'
-import { Theme } from '.'
+import { createGlobalStyle, css } from 'styled-components';
+import { Theme } from '.';
 
 export default createGlobalStyle`
 ${({ theme }) => css`
@@ -22,4 +22,4 @@ ${({ theme }) => css`
     }
   }
 `}
-  `
+  `;

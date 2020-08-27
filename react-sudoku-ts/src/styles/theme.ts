@@ -7,4 +7,4 @@ export default {
     black: '#080B03',
   },
   transition: '0.3s',
-}
+};

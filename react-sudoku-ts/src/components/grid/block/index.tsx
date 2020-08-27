@@ -1,14 +1,14 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 
-import { Container } from './styles'
+import { Container } from './styles';
 
 interface IProps {
-  colIndex: number
-  rowIndex: number
+  colIndex: number;
+  rowIndex: number;
 }
 
 const Block: FC<IProps> = ({ rowIndex, colIndex }) => {
-  return <Container className="block"></Container>
-}
+  return <Container className={`block-${rowIndex}-${colIndex}`}></Container>;
+};
 
-export default Block
+export default Block;

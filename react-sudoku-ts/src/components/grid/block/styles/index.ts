@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -27,4 +27,4 @@ export const Container = styled.div`
       background-color: ${theme.colors.lightBlue};
     }
   `}
-`
+`;
