@@ -1,4 +1,4 @@
-import global from 'global';
+import globalVar from 'globalVar';
 import { GRID, NUMBERS } from 'typings';
 import {
   verifyGrid,
@@ -32,7 +32,7 @@ function solveGrid(grid: GRID) {
             if (!isInSquare({ square, value })) {
               grid[row][col] = value;
               if (verifyGrid(grid)) {
-                global.counter++;
+                globalVar.counter++;
                 break;
               } else if (solveGrid(grid)) return true;
             }

@@ -7,4 +7,5 @@ export { default as randomIndexGenerator } from './randomIndex';
 export { default as copiedGrid } from './copyGrid';
 export { default as solveGrid } from './solveGrid';
 export { default as removeNumbers } from './removeNumbers';
+export { default as compareColRow } from './compareColRow';
 export * from './isIn';

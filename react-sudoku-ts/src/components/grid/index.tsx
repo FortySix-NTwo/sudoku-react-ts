@@ -3,26 +3,42 @@ import useMousetrap from 'react-hook-mousetrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch, AnyAction } from 'redux';
 
-import { createGrid, IReducer, selectBlock } from 'reducers';
-import { INDEX, BLOCK_COORDS } from 'typings';
+import { createGrid, IReducer, selectBlock, fillInBlock } from 'reducers';
+import { INDEX, BLOCK_COORDS, NUMBERS, N } from 'typings';
 
 import Block from './block';
 import { Container, Row } from './styles';
 
 interface IState {
   selectedBlock?: BLOCK_COORDS;
+  selectedValue: N;
 }
 
 const Grid: FC = () => {
-  const state = useSelector<IReducer, IState>(({ selectedBlock }) => ({
-    selectedBlock,
-  }));
+  const state = useSelector<IReducer, IState>(
+    ({ selectedBlock, gameGrid }) => ({
+      selectedBlock,
+      selectedValue:
+        gameGrid && selectedBlock
+          ? gameGrid[selectedBlock[0]][selectedBlock[1]]
+          : 0,
+    })
+  );
+
   const dispatch = useDispatch<Dispatch<AnyAction>>();
   const create = useCallback(() => dispatch(createGrid()), [dispatch]);
 
   useEffect(() => {
     create();
   }, [create]);
+
+  const fillBlock = useCallback(
+    (n: NUMBERS) => {
+      if (state.selectedBlock && state.selectedValue === 0)
+        dispatch(fillInBlock(n, state.selectedBlock));
+    },
+    [dispatch, state.selectedBlock, state.selectedValue]
+  );
 
   function moveDown() {
     if (state.selectedBlock && state.selectedBlock[0] < 8)
@@ -63,6 +79,16 @@ const Grid: FC = () => {
         ])
       );
   }
+
+  useMousetrap('1', () => fillBlock(1));
+  useMousetrap('2', () => fillBlock(2));
+  useMousetrap('3', () => fillBlock(3));
+  useMousetrap('4', () => fillBlock(4));
+  useMousetrap('5', () => fillBlock(5));
+  useMousetrap('6', () => fillBlock(6));
+  useMousetrap('7', () => fillBlock(7));
+  useMousetrap('8', () => fillBlock(8));
+  useMousetrap('9', () => fillBlock(9));
 
   useMousetrap('down', moveDown);
   useMousetrap('left', moveLeft);

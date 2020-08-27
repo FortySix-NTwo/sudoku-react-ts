@@ -1,6 +1,12 @@
 import { AnyAction } from 'redux';
 
-import { fillSudokuGrid, removeNumbers, copiedGrid } from 'utils';
+import { GRID } from 'typings';
+import {
+  fillSudokuGrid,
+  removeNumbers,
+  copiedGrid,
+  compareColRow,
+} from 'utils';
 
 import { IReducer } from './interfaces';
 import * as types from './types';
@@ -24,6 +30,20 @@ function reducer(state = initialState, action: AnyAction): IReducer {
     case types.SELECT_BLOCK_AT:
       return { ...state, selectedBlock: action.coords };
 
+    case types.FILL_IN_BLOCK:
+      if (state.gameGrid && state.solvedGrid) {
+        if (
+          state.solvedGrid[action.coords[0]][action.coords[1]] !== action.value
+        ) {
+          alert('Incorrect Option');
+          return state;
+        }
+        state.gameGrid[action.coords[0]][action.coords[1]] = action.value;
+        if (compareColRow(state.gameGrid, state.solvedGrid))
+          alert('Completed Congratulations');
+        return { ...state, gameGrid: [...state.gameGrid] as GRID };
+      }
+      return state;
     default:
       return state;
   }
