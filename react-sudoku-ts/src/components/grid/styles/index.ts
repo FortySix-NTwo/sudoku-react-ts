@@ -13,27 +13,27 @@ export const Row = styled.div`
 
     &:nth-child(1) {
       div {
-        border-top: solid 4px ${theme.colors.blue};
+        border-top: solid 4px ${theme.colors.honeyDew};
       }
     }
     &:nth-child(3),
     &:nth-child(6) {
       div {
-        border-bottom: solid 3px ${theme.colors.blue};
+        border-bottom: solid 3px ${theme.colors.honeyDew};
       }
     }
     &:nth-child(9) {
-      border-bottom: solid 4px ${theme.colors.blue};
+      border-bottom: solid 4px ${theme.colors.honeyDew};
     }
 
     div {
       &:nth-child(1) {
-        border-left: solid 4px ${theme.colors.blue};
+        border-left: solid 4px ${theme.colors.honeyDew};
       }
       &:nth-child(3),
       &:nth-child(6),
       &:nth-child(9) {
-        border-right: solid 3px ${theme.colors.blue};
+        border-right: solid 3px ${theme.colors.honeyDew};
       }
       &:nth-child(4),
       &:nth-child(7) {

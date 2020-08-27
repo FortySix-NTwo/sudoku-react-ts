@@ -70,10 +70,10 @@ const Grid: FC = () => {
   useMousetrap('up', moveUp);
 
   return (
-    <Container className="sudoku-container">
+    <Container className="grid-container">
       {Children.toArray(
         [...Array(9)].map((_, rowIndex) => (
-          <Row className="sudoku-row-container">
+          <Row className="grid-row-container">
             {Children.toArray(
               [...Array(9)].map((_, colIndex) => (
                 <Block

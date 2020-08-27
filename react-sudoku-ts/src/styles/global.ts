@@ -13,7 +13,7 @@ ${({ theme }) => css`
     }
     #root {
       background: ${Theme.colors.background};
-      color: ${Theme.colors.white};
+      color: ${Theme.colors.honeyDew};
       display: flex;
       font-family: sans-serif;
       height: 100%;

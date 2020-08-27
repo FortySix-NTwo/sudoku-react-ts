@@ -7,8 +7,10 @@ interface IProps {
 export const Container = styled.div<IProps>`
   ${({ active, theme }) => css`
     align-items: center;
-    background-color: ${active ? theme.colors.lightBlue : theme.colors.white};
-    border: solid 1px ${theme.colors.blue};
+    background-color: ${active
+      ? theme.colors.persianGreen
+      : theme.colors.persianBlue};
+    border: solid 1px ${theme.colors.celadonBlue};
     cursor: pointer;
     display: flex;
     flex-grow: 1;
@@ -28,7 +30,7 @@ export const Container = styled.div<IProps>`
     }
 
     &:hover {
-      background-color: ${theme.colors.lightBlue};
+      background-color: ${theme.colors.skyBlue};
     }
   `}
 `;

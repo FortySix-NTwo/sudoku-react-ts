@@ -1,10 +1,13 @@
 export default {
   colors: {
-    background: 'linear-gradient(hsl(238, 29%, 26%), hsl(196, 29%, 26%))',
-    white: 'hsl(110, 40%, 100%)',
-    blue: 'hsl(225, 58%, 52%)',
-    lightBlue: 'hsl(223, 28%, 63%)',
-    black: '#080B03',
+    background: 'linear-gradient(#2A9D8F, #1D3557)',
+    honeyDew: '#F1FAEE',
+    charcoal: '#264653',
+    persianGreen: '#2A9D8F',
+    celadonBlue: '#457B9D',
+    persianBlue: '#1D3557',
+    powderBlue: '#A8DADC',
+    skyBlue: '#90E0EF',
   },
   transition: '0.3s',
 };
