@@ -17,7 +17,7 @@ export const Container = styled.div<IProps>`
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 0;
-    font-weight: ${puzzle ? 'bold' : 'normal'};
+    font-weight: ${puzzle ? 'bold' : 'italic'};
     font-size: 20px;
     font-family: ${puzzle ? 'Montserrat' : 'Handlee'};
     height: auto;

@@ -1,4 +1,4 @@
-import { GRID } from 'typings'
+import { GRID, LEVEL } from 'typings'
 import { randomIndexGenerator, copiedGrid, solveGrid } from 'utils'
 import globalVar from 'globalVar'
 
@@ -6,10 +6,10 @@ import globalVar from 'globalVar'
  * remove numbers from grid in order to create
  * game logic for sudoku puzzle
  * @param grid 9x9 matrix
- * @param attempts number of attempts to solve
+ * @param difficulty of game solve
  */
 
-function removeNumbers(grid: GRID, difficulty = 5): GRID {
+function removeNumbers(grid: GRID, difficulty: LEVEL): GRID {
   while (difficulty > 0) {
     let row = randomIndexGenerator()
     let col = randomIndexGenerator()

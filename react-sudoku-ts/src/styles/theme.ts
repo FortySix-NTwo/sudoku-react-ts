@@ -9,6 +9,7 @@ export default {
     persianBlue: '#1D3557',
     powderBlue: '#A8DADC',
     skyBlue: '#90E0EF',
+    eggShell: '#8D9792',
   },
   transition: '0.3s',
 }

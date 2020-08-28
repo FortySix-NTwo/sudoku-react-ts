@@ -2,9 +2,9 @@ import { AnyAction } from 'redux'
 
 import { GRID } from 'typings'
 import { fillSudokuGrid, removeNumbers, copiedGrid, compareColRow } from 'utils'
-
 import { IReducer } from './interfaces'
 import * as types from './types'
+import globalVar from 'globalVar'
 
 const initialState: IReducer = {}
 
@@ -13,7 +13,7 @@ function reducer(state = initialState, action: AnyAction): IReducer {
     case types.CREATE_SUDOKU_GRID:
       const solvedGrid = fillSudokuGrid()
       const gridCopy = copiedGrid(solvedGrid)
-      const puzzleGrid = removeNumbers(gridCopy)
+      const puzzleGrid = removeNumbers(gridCopy, globalVar.level)
       const gameGrid = copiedGrid(puzzleGrid)
       return {
         ...state,
