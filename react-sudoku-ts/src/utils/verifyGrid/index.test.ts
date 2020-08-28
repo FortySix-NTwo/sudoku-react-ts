@@ -1,4 +1,4 @@
-import verifyGrid from './';
+import verifyGrid from './'
 
 describe('check a 9x9 matrix', () => {
   it('returns true when grid is complete', () => {
@@ -14,8 +14,8 @@ describe('check a 9x9 matrix', () => {
         [2, 8, 5, 9, 6, 3, 7, 1, 4],
         [3, 1, 9, 2, 4, 7, 8, 5, 6],
       ])
-    ).toBeTruthy();
-  });
+    ).toBeTruthy()
+  })
   it('returns false when grid is not complete', () => {
     expect(
       verifyGrid([
@@ -29,6 +29,6 @@ describe('check a 9x9 matrix', () => {
         [2, 8, 5, 9, 6, 3, 7, 1, 4],
         [3, 1, 9, 2, 4, 7, 8, 5, 6],
       ])
-    ).toBeFalsy();
-  });
-});
+    ).toBeFalsy()
+  })
+})

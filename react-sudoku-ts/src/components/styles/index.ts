@@ -1,3 +1,4 @@
-export { Content } from './content';
-export { Title } from './title';
-export { Card } from './card';
+export * from './content'
+export * from './title'
+export * from './card'
+export * from './button'

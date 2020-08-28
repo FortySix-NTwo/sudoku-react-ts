@@ -1,6 +1,6 @@
-import { GRID } from 'typings';
-import { randomIndexGenerator, copiedGrid, solveGrid } from 'utils';
-import globalVar from 'globalVar';
+import { GRID } from 'typings'
+import { randomIndexGenerator, copiedGrid, solveGrid } from 'utils'
+import globalVar from 'globalVar'
 
 /**
  * remove numbers from grid in order to create
@@ -11,29 +11,29 @@ import globalVar from 'globalVar';
 
 function removeNumbers(grid: GRID, difficulty = 5): GRID {
   while (difficulty > 0) {
-    let row = randomIndexGenerator();
-    let col = randomIndexGenerator();
+    let row = randomIndexGenerator()
+    let col = randomIndexGenerator()
 
     while (grid[row][col] === 0) {
-      row = randomIndexGenerator();
-      col = randomIndexGenerator();
+      row = randomIndexGenerator()
+      col = randomIndexGenerator()
     }
 
-    const currentValues = grid[row][col];
+    const currentValues = grid[row][col]
 
-    grid[row][col] = 0;
+    grid[row][col] = 0
 
-    const copiedValues = copiedGrid(grid);
+    const copiedValues = copiedGrid(grid)
 
-    globalVar.counter = 0;
-    solveGrid(copiedValues);
+    globalVar.counter = 0
+    solveGrid(copiedValues)
 
     if (globalVar.counter !== 1) {
-      grid[row][col] = currentValues;
-      difficulty--;
+      grid[row][col] = currentValues
+      difficulty--
     }
   }
-  return grid;
+  return grid
 }
 
-export default removeNumbers;
+export default removeNumbers

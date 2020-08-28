@@ -1,11 +1,11 @@
-export { default as shuffle } from './shuffle';
-export { default as identifySquare } from './identifySquare';
-export { default as verifyGrid } from './verifyGrid';
-export { default as populateGrid } from './populateGrid';
-export { default as fillSudokuGrid } from './fillGrid';
-export { default as randomIndexGenerator } from './randomIndex';
-export { default as copiedGrid } from './copyGrid';
-export { default as solveGrid } from './solveGrid';
-export { default as removeNumbers } from './removeNumbers';
-export { default as compareColRow } from './compareColRow';
-export * from './isIn';
+export { default as shuffle } from './shuffle'
+export { default as identifySquare } from './identifySquare'
+export { default as verifyGrid } from './verifyGrid'
+export { default as populateGrid } from './populateGrid'
+export { default as fillSudokuGrid } from './fillGrid'
+export { default as randomIndexGenerator } from './randomIndex'
+export { default as copiedGrid } from './copyGrid'
+export { default as solveGrid } from './solveGrid'
+export { default as removeNumbers } from './removeNumbers'
+export { default as compareColRow } from './compareColRow'
+export * from './isIn'

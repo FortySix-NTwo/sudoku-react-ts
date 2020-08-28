@@ -1,5 +1,5 @@
-import { createGlobalStyle, css } from 'styled-components';
-import { Theme } from '.';
+import { createGlobalStyle, css } from 'styled-components'
+import { Theme } from './'
 
 export default createGlobalStyle`
 ${({ theme }) => css`
@@ -14,12 +14,12 @@ ${({ theme }) => css`
     #root {
       background: ${Theme.colors.background};
       color: ${Theme.colors.honeyDew};
+      font-family: 'Montserrat', sans-serif;
       display: flex;
-      font-family: sans-serif;
       height: 100%;
       justify-content: center;
       padding: 15px;
     }
   }
 `}
-  `;
+  `

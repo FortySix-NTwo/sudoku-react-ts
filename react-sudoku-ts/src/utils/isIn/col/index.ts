@@ -1,8 +1,8 @@
-import { GRID, NUMBERS } from 'typings';
+import { GRID, NUMBERS } from 'typings'
 interface IInput {
-  grid: GRID;
-  col: number;
-  value: NUMBERS;
+  grid: GRID
+  col: number
+  value: NUMBERS
 }
 
 /**
@@ -12,10 +12,10 @@ interface IInput {
 function isInCol({ grid, col, value }: IInput): boolean {
   for (let i = 0; i < 9; i++) {
     if (value === grid[i][col]) {
-      return true;
+      return true
     }
   }
-  return false;
+  return false
 }
 
-export default isInCol;
+export default isInCol

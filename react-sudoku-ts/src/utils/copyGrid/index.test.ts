@@ -1,4 +1,4 @@
-import copiedGrid from './';
+import copiedGrid from './'
 
 describe('copiedGrid', () => {
   it('returns a copy of a 9x9 sudoku grid', () => {
@@ -24,6 +24,6 @@ describe('copiedGrid', () => {
       [4, 7, 6, 5, 1, 8, 2, 3, 9],
       [2, 8, 5, 9, 6, 3, 7, 1, 4],
       [3, 1, 9, 2, 4, 7, 8, 5, 6],
-    ]);
-  });
-});
+    ])
+  })
+})

@@ -1,4 +1,4 @@
-import { GRID } from 'typings';
+import { GRID } from 'typings'
 
 /**
  * check wither a value that is being used is
@@ -8,8 +8,8 @@ import { GRID } from 'typings';
 
 function verifyGrid(grid: GRID): boolean {
   for (let i = 0; i < 9; i++)
-    for (let j = 0; j < 9; j++) if (grid[i][j] === 0) return false;
-  return true;
+    for (let j = 0; j < 9; j++) if (grid[i][j] === 0) return false
+  return true
 }
 
-export default verifyGrid;
+export default verifyGrid

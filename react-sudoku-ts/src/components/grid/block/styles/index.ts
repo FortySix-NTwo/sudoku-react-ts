@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
 interface IProps {
-  active?: boolean;
-  puzzle?: boolean;
+  active?: boolean
+  puzzle?: boolean
 }
 
 export const Container = styled.div<IProps>`
@@ -19,6 +19,7 @@ export const Container = styled.div<IProps>`
     flex-basis: 0;
     font-weight: ${puzzle ? 'bold' : 'normal'};
     font-size: 20px;
+    font-family: ${puzzle ? 'Montserrat' : 'Handlee'};
     height: auto;
     justify-content: center;
     transition: ${theme.transition};
@@ -34,4 +35,4 @@ export const Container = styled.div<IProps>`
       background-color: ${theme.colors.skyBlue};
     }
   `}
-`;
+`

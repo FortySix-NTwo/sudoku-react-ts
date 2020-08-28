@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
 export const Title = styled.h1`
   ${({ theme }) => css`
@@ -6,4 +6,4 @@ export const Title = styled.h1`
     margin-top: 0;
     text-align: center;
   `}
-`;
+`
